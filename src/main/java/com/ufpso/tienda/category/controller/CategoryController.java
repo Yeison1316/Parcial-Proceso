@@ -19,37 +19,33 @@ public class CategoryController {
 
 
     @GetMapping("/all")
-    public ResponseEntity<?> finAll(@RequestHeader(value = "Authorization") String token){
-            return ResponseEntity.ok(categoryService.findAllCategory());
+    public List<Category> finAll(){
+            return categoryService.findAllCategory();
         }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getCategoryById(@PathVariable Long id, @RequestHeader(value = "Authorization") String token){
-            return ResponseEntity.ok(categoryService.getCategoryById(id));
+    public Category getCategoryById(@PathVariable Long id){
+            return categoryService.getCategoryById(id);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody Category category, @RequestHeader(value = "Authorization") String token){
-            return new ResponseEntity<>(categoryService.CreateCategory(category), HttpStatus.CREATED);
+    public Category create(@RequestBody Category category){
+            return categoryService.CreateCategory(category);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Category category, @PathVariable Long id, @RequestHeader(value = "Authorization") String token){
-            return new ResponseEntity(categoryService.updateCategory(category, id), HttpStatus.OK);
+    public Category update(@RequestBody Category category, @PathVariable Long id){
+            return categoryService.updateCategory(category, id);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id, @RequestHeader(value = "Authorization") String token){
-            return new ResponseEntity(categoryService.delete(id), HttpStatus.NO_CONTENT);
+    public Boolean delete(@PathVariable Long id){
+            return categoryService.delete(id);
     }
 
     @GetMapping("/article/{id}")
-    public ResponseEntity<?> getAllArticlesByCategory(@PathVariable Long id, @RequestHeader(value = "Authorization") String token) {
+    public List<Article> getAllArticlesByCategory(@PathVariable Long id) {
             List<Article> articles = categoryService.getAllArticleByCategory(id);
-            if (articles != null) {
-                return ResponseEntity.ok(articles);
-            } else {
-                return ResponseEntity.notFound().build();
-            }
+            return articles;
     }
 }
