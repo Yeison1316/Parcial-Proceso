@@ -3,6 +3,8 @@ package com.ufpso.tienda.article.controller;
 import com.ufpso.tienda.article.model.Article;
 import com.ufpso.tienda.article.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,13 +33,14 @@ public class ArticleController {
     }
 
     @PutMapping("/{id}")
-    public Article updateArticle(@RequestBody Article article, @PathVariable Long id) {
+    public ResponseEntity<Article> updateArticle(@RequestBody Article article, @PathVariable Long id) {
         return ResponseEntity.ok().body(articleService.updateArticle(article, id));
     }
 
     @DeleteMapping("/{id}")
     public Boolean delete(@PathVariable Long id) {
-        ResponseEntity.noContent().body(articleService.delete(id));
+        articleService.delete(id);
+        return  ResponseEntity.noContent().build().hasBody();
     }
 
 }
