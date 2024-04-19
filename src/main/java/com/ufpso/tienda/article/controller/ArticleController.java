@@ -39,8 +39,7 @@ public class ArticleController {
 
     @DeleteMapping("/{id}")
     public Boolean delete(@PathVariable Long id) {
-        articleService.delete(id);
-        return  ResponseEntity.noContent().build().hasBody();
+        return articleService.delete(id);
     }
 
 }
