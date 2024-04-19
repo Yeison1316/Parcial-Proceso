@@ -16,28 +16,28 @@ public class ArticleController {
     private ArticleService articleService;
 
     @GetMapping("/all")
-    public List<Article> findAll() {
-        return articleService.findAllArticle();
+    public ResponseEntity<List<Article>> findAll() {
+         return ResponseEntity.ok().body(articleService.findAllArticle());
     }
 
     @GetMapping("/{id}")
-    public Article getArticleById(@PathVariable Long id) {
-            return articleService.getArticleById(id);
+    public ResponseEntity<Article> getArticleById(@PathVariable Long id) {
+        return ResponseEntity.ok().body(articleService.getArticleById(id));
     }
 
     @PostMapping("/create")
-    public Article  create(@RequestBody Article article) {
-            return  articleService.createArticle(article);
+    public ResponseEntity<Article>  create(@RequestBody Article article) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(articleService.createArticle(article));
     }
 
     @PutMapping("/{id}")
     public Article updateArticle(@RequestBody Article article, @PathVariable Long id) {
-            return  articleService.updateArticle(article, id);
+        return ResponseEntity.ok().body(articleService.updateArticle(article, id));
     }
 
     @DeleteMapping("/{id}")
     public Boolean delete(@PathVariable Long id) {
-            return  articleService.delete(id);
+        ResponseEntity.noContent().body(articleService.delete(id));
     }
 
 }
