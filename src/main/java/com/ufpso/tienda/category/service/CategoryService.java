@@ -23,7 +23,7 @@ public class CategoryService {
     }
 
     public Category CreateCategory(Category category){
-        Optional<Category> categoryExist = categoryRepository.findByCategoryName(category.getNameCategory());
+        Optional<Category> categoryExist = categoryRepository.findById(category.getId());
         if(categoryExist.isEmpty()){
             throw  new AlreadyExistsException(ErrorMessages.CATEGORY_NAME_EXIST.getMessage());
         }
