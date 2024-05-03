@@ -1,7 +1,6 @@
 package com.ufpso.tienda.article.controller;
-
 import com.ufpso.tienda.article.model.Article;
-import com.ufpso.tienda.article.service.ArticleService;
+import com.ufpso.tienda.article.service.InterfaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,7 @@ import java.util.List;
 public class ArticleController {
 
     @Autowired
-    private ArticleService articleService;
+    private InterfaceService articleService;
 
     @GetMapping("/all")
     public ResponseEntity<List<Article>> findAll() {

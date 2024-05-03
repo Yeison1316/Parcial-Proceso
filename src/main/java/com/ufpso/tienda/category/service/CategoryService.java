@@ -1,6 +1,9 @@
 package com.ufpso.tienda.category.service;
 
+import com.ufpso.tienda.article.exceptions.AlreadyExistsException;
+import com.ufpso.tienda.article.exceptions.NotFoundException;
 import com.ufpso.tienda.article.model.Article;
+import com.ufpso.tienda.article.model.enums.ErrorMessages;
 import com.ufpso.tienda.category.model.Category;
 import com.ufpso.tienda.category.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +23,26 @@ public class CategoryService {
     }
 
     public Category CreateCategory(Category category){
+        Optional<Category> categoryExist = categoryRepository.findByCategoryName(category.getNameCategory());
+        if(categoryExist.isEmpty()){
+            throw  new AlreadyExistsException(ErrorMessages.CATEGORY_NAME_EXIST.getMessage());
+        }
         return categoryRepository.save(category);
     }
 
     public Category getCategoryById(Long id){
-        return categoryRepository.findById(id).get();
+        Optional<Category> categoryExist = categoryRepository.findById(id);
+        if(categoryExist.isEmpty()){
+            throw  new NotFoundException(ErrorMessages.CATEGORY_NOT_FOUND.getMessage());
+        }
+        return categoryExist.get();
     }
 
     public Category updateCategory (Category category, Long id){
         Optional<Category> categoryExist = categoryRepository.findById(id);
+        if(categoryExist.isEmpty()){
+            throw  new NotFoundException(ErrorMessages.CATEGORY_NOT_FOUND.getMessage());
+        }
         categoryExist.get().setNameCategory(category.getNameCategory());
         return categoryRepository.save(categoryExist.get());
     }
@@ -36,6 +50,9 @@ public class CategoryService {
 
     public Boolean delete(Long id){
         Optional<Category> categoryExist = categoryRepository.findById(id);
+        if(categoryExist.isEmpty()){
+            throw  new NotFoundException(ErrorMessages.CATEGORY_NOT_FOUND.getMessage());
+        }
         categoryRepository.delete(categoryExist.get());
         return true;
     }
