@@ -19,7 +19,7 @@ public class Article {
     private Long id;
 
     @NotNull(message = "name is required")
-    @Size(max = 255, message = "name max 255 characters")
+    @Size(min = 5,max = 255, message = "name max 255 characters")
     private String name;
 
     @NotNull(message = "description is required")

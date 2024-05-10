@@ -3,6 +3,7 @@ package com.ufpso.tienda.category.controller;
 import com.ufpso.tienda.article.model.Article;
 import com.ufpso.tienda.category.model.Category;
 import com.ufpso.tienda.category.service.CategoryService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,12 +30,12 @@ public class CategoryController {
     }
 
     @PostMapping("/create")
-    public Category create(@RequestBody Category category){
+    public Category create(@RequestBody @Valid Category category){
             return categoryService.CreateCategory(category);
     }
 
     @PutMapping("/{id}")
-    public Category update(@RequestBody Category category, @PathVariable Long id){
+    public Category update(@RequestBody @Valid Category category, @PathVariable Long id){
             return categoryService.updateCategory(category, id);
     }
 
