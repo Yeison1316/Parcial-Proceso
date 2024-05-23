@@ -1,5 +1,6 @@
 package com.ufpso.tienda.article.controller;
 import com.ufpso.tienda.article.model.Article;
+import com.ufpso.tienda.article.model.enums.SuccessMessages;
 import com.ufpso.tienda.article.service.InterfaceService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
@@ -8,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.ufpso.tienda.article.model.dto.Response;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -20,28 +23,34 @@ public class ArticleController {
     private InterfaceService articleService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Article>> findAll() {
-         return ResponseEntity.ok().body(articleService.findAllArticle());
+    public ResponseEntity<Response> findAll() {
+        Response response = articleService.findAllArticle();
+        return ResponseEntity.ok().body(response);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Article> getArticleById(@PathVariable @Min(1) Long id) {
-        return ResponseEntity.ok().body(articleService.getArticleById(id));
+    public ResponseEntity<Response> getArticleById(@PathVariable @Min(1) Long id) {
+        Response article = articleService.getArticleById(id);
+        return ResponseEntity.ok().body(article);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Article>  create(@RequestBody @Valid Article article) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(articleService.createArticle(article));
+    public ResponseEntity<Response> create(@RequestBody @Valid Article article) {
+        Response response = articleService.createArticle(article);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+
     @PutMapping("/{id}")
-    public ResponseEntity<Article> updateArticle(@RequestBody @Valid Article article, @PathVariable @Min(1) Long id) {
-        return ResponseEntity.ok().body(articleService.updateArticle(article, id));
+    public ResponseEntity<Response> updateArticle(@RequestBody @Valid Article article, @PathVariable @Min(1) Long id) {
+        Response response = articleService.updateArticle(article, id);
+        return ResponseEntity.ok().body(response);
     }
 
     @DeleteMapping("/{id}")
-    public Boolean delete(@PathVariable @Min(1) Long id) {
-        return articleService.delete(id);
+    public ResponseEntity<Response> delete(@PathVariable @Min(1) Long id) {
+        Response response = articleService.delete(id);
+        return ResponseEntity.ok().body(response);
     }
 
 }

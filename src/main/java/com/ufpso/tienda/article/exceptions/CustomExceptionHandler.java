@@ -1,5 +1,6 @@
 package com.ufpso.tienda.article.exceptions;
 
+import com.ufpso.tienda.article.model.Article;
 import com.ufpso.tienda.article.model.dto.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
