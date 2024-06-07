@@ -10,7 +10,11 @@ public enum SuccessMessages {
     CATEGORY_CREATE("Category create!"),
     CATEGORY_UPDATE("Update Caegory!"),
     GET_CATEGORY("Successful category query"),
-    DELETE_CATEGORY("Category successful removal");
+    DELETE_CATEGORY("Category successful removal"),
+    USER_CREATE("User create!"),
+    USER_UPDATE("Update user OK!"),
+    GET_USER("Successful user query"),
+    DELETE_USER("User successful removal");
 
 
     private final String message;

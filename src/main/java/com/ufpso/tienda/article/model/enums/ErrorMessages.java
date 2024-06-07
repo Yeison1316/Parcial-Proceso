@@ -6,7 +6,9 @@ public enum ErrorMessages {
     ARTICLE_NOT_FOUND("Article not found!"),
     ARTICLE_NAME_EXIST("The name is already exist!"),
     CATEGORY_NOT_FOUND("Category not found!"),
-    CATEGORY_NAME_EXIST("The name is already exist!");
+    CATEGORY_NAME_EXIST("The name is already exist!"),
+    USER_NOT_FOUND("User not found!"),
+    USER_NAME_EXIST("The name is already exist!");
 
     private  final  String message;
     ErrorMessages(String message){
