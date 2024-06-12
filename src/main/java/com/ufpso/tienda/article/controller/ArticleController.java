@@ -1,18 +1,13 @@
 package com.ufpso.tienda.article.controller;
 import com.ufpso.tienda.article.model.Article;
-import com.ufpso.tienda.article.model.enums.SuccessMessages;
 import com.ufpso.tienda.article.service.InterfaceService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.ufpso.tienda.article.model.dto.Response;
-
-import java.time.LocalDate;
-import java.util.List;
 
 
 @RestController
