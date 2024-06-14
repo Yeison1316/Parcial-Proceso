@@ -1,10 +1,7 @@
 package com.ufpso.tienda.config;
 
-import com.ufpso.tienda.article.exceptions.AuthenticationFailedException;
 import com.ufpso.tienda.article.exceptions.CustomExceptionHandler;
-import com.ufpso.tienda.article.exceptions.CustomResponseHandler;
 import com.ufpso.tienda.article.exceptions.NotFoundException;
-import com.ufpso.tienda.article.model.dto.Response;
 import com.ufpso.tienda.article.model.enums.ErrorMessages;
 import com.ufpso.tienda.filter.JwtAuthenticationFilter;
 import com.ufpso.tienda.user.repository.UserRepository;
