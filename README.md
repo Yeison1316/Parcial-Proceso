@@ -72,8 +72,8 @@ La API utiliza autenticación basada en tokens JWT. Para acceder a la mayoría d
 
 El token recibido tras el inicio de sesión debe incluirse en el encabezado de las solicitudes como:
 
-### Authorization: Bearer <token>
-### Registro de Usuario
+#### Authorization: Bearer <token>
+##### Registro de Usuario
 1. Método: POST
 2. Endpoint: auth/register
 3. Descripción: Registra un nuevo usuario.
@@ -95,7 +95,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjYXJsb3NAZXhhbXBsZS5jb20iLCJpYXQiOjE3MTg3Mjg2MjAsImV4cCI6MTcxODcyODk4MH0._4lKmwyDgQgjrhlvHX9KMr2kvtgqH1_MjmdZmOxmNnGBFM_psXYapfahPk6cubS1FyVsobtvW4PuW8K6hrpNXQ"
 }
 ```
-### Inicio de Sesión
+##### Inicio de Sesión
 1. Método: POST
 2. Endpoint: auth/login
 3. Descripción: Autentica un usuario y devuelve un token JWT.
@@ -112,8 +112,8 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 ```
-### Endpoints de Usuarios
-### Crear Usuarios
+#### Endpoints de Usuarios
+##### Crear Usuarios
 1. Método: POST
 2. Endpoint: user/create
 3. Descripción: Crear un nuevo usuario.
@@ -161,7 +161,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Obtener usuarios
+##### Obtener usuarios
 1. Método: GET
 2. Endpoint: user/all
 3. Descripción: Devuelve una lista de todos los usuarios.
@@ -197,7 +197,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Obtener un usuario
+##### Obtener un usuario
 1. Método: GET
 2. Endpoint: user/id
 3. Descripción: Devuelve el usuario por su id.
@@ -233,7 +233,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Actualizar un usuario
+##### Actualizar un usuario
 1. Método: PUT
 2. Endpoint: user/id
 3. Descripción: Actualiza un usuario existente.
@@ -281,7 +281,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
    ```
-### Eliminar un usuario
+##### Eliminar un usuario
 1. Método: DELETE
 2. Endpoint: user/id
 3. Descripción: Elimina un usuario existente.
@@ -317,8 +317,8 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Endpoints de Categorías
-### Obtener Categorías
+#### Endpoints de Categorías
+##### Obtener Categorías
 1. Método: GET
 2. Endpoint: category/all
 3. Descripción: Devuelve una lista de todas las categorías.
@@ -342,7 +342,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Crear Categoría
+##### Crear Categoría
 1. Método: POST
 2. Endpoint: category/create
 3. Descripción: Crea una nueva categoría.
@@ -368,7 +368,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Actualizar una Categoría
+##### Actualizar una Categoría
 1. Método: PUT
 2. Endpoint: category/{id}
 3. Descripción: Actualiza una categoría existente.
@@ -394,7 +394,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Eliminar una Categoría
+##### Eliminar una Categoría
 1. Método: DELETE
 2. Endpoint: /api/categories/{id}
 3. Descripción: Elimina una categoría.
@@ -414,8 +414,8 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Endpoints de Artículos
-### Obtener Artículos
+#### Endpoints de Artículos
+##### Obtener Artículos
 1. Método: GET
 2. Endpoint: article/all
 3. Descripción: Devuelve una lista de todos los artículos.
@@ -479,7 +479,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Crear Artículos
+##### Crear Artículos
 1. Método: POST
 2. Endpoint: article/create
 3. Descripción: Crea un nuevo artículo.
@@ -520,7 +520,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Actualizar un Artículo
+##### Actualizar un Artículo
 1. Método: PUT
 2. Endpoint: article/{id}
 3. Descripción: Actualiza un artículo existente.
@@ -563,7 +563,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Eliminar un Artículo
+##### Eliminar un Artículo
 1. Método: DELETE
 2. Endpoint: article/{id}
 3. Descripción: Elimina un artículo.
