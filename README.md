@@ -11,6 +11,7 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
 - [Uso](#uso)
   - [Autenticación](#autenticación)
   - [Endpoints de Usuarios](#endpoints-de-usuarios)
+      - [Registrar usuarios](#registro-de-usuario)
   - [Endpoints de Categorías](#endpoints-de-categorías)
   - [Endpoints de Artículos](#endpoints-de-artículos)
 
@@ -63,12 +64,12 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 4. Datos del cuerpo:
 ```json
 {
-  "fullName": "Yeison Mestra",
+  "fullName": "full name",
   "birthDay": "1990-01-01",
   "document": "12345678",
   "phoneNumber": "1234567890",
-  "email": "yeison@example.com",
-  "password": "pas123",
+  "email": "example@example.com",
+  "password": "1234",
   "role": "ADMIN"
 }
 ```
