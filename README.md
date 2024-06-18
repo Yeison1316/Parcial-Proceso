@@ -22,13 +22,7 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
     git clone https://github.com/usuario/tienda-api.git
     ```
 
-2. Navega al directorio del proyecto:
-
-    ```bash
-    cd tienda-api
-    ```
-
-3. Instala las dependencias:
+2. Instala las dependencias:
 
     ```bash
     Instalar la extension o plugin de lombok
