@@ -83,17 +83,17 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 }
 ```
 ### Inicio de Sesión
-Método: POST
-Endpoint: auth/login
-Descripción: Autentica un usuario y devuelve un token JWT.
-Datos del cuerpo:
+1. Método: POST
+2. Endpoint: auth/login
+3. Descripción: Autentica un usuario y devuelve un token JWT.
+4. Datos del cuerpo:
 ```json
 {
 "email": "email@example.com",
 "password": "contraseña"
 }
 ```
-Respuesta:
+5. Respuesta:
 ```json
 {
 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
@@ -101,10 +101,10 @@ Respuesta:
 ```
 ### Endpoints de Categorías
 ### Obtener Categorías
-Método: GET
-Endpoint: category/all
-Descripción: Devuelve una lista de todas las categorías.
-Respuesta:
+1. Método: GET
+2. Endpoint: category/all
+3. Descripción: Devuelve una lista de todas las categorías.
+4. Respuesta:
 ```json
 {
     "date": "2024-06-18",
@@ -125,16 +125,16 @@ Respuesta:
 }
 ```
 ### Crear Categoría
-Método: POST
-Endpoint: category/create
-Descripción: Crea una nueva categoría.
-Datos del cuerpo:
+1. Método: POST
+2. Endpoint: category/create
+3. Descripción: Crea una nueva categoría.
+4. Datos del cuerpo:
 ```json
 {
   "nameCategory": "nombre_categoria"
 }
 ```
-Respuesta:
+5. Respuesta:
 ```json
 {
     "date": "2024-06-18",
@@ -151,16 +151,16 @@ Respuesta:
 }
 ```
 ### Actualizar Categoría
-Método: PUT
-Endpoint: category/{id}
-Descripción: Actualiza una categoría existente.
-Datos del cuerpo:
+1. Método: PUT
+2. Endpoint: category/{id}
+3. Descripción: Actualiza una categoría existente.
+4. Datos del cuerpo:
 ```json
 {
 "nameCategory": "nuevo_nombre",
 }
 ```
-Respuesta:
+5. Respuesta:
 ```json
 {
     "date": "2024-06-18",
@@ -177,10 +177,10 @@ Respuesta:
 }
 ```
 ### Eliminar Categoría
-Método: DELETE
-Endpoint: /api/categories/{id}
-Descripción: Elimina una categoría.
-Respuesta:
+1. Método: DELETE
+2. Endpoint: /api/categories/{id}
+3. Descripción: Elimina una categoría.
+4. Respuesta:
 ```json
 {
     "date": "2024-06-18",
@@ -198,10 +198,10 @@ Respuesta:
 ```
 ### Endpoints de Artículos
 ### Obtener Artículos
-Método: GET
-Endpoint: article/all
-Descripción: Devuelve una lista de todos los artículos.
-Respuesta:
+1. Método: GET
+2. Endpoint: article/all
+3. Descripción: Devuelve una lista de todos los artículos.
+4. Respuesta:
 ```json
 {
     "date": "2024-06-18",
@@ -262,10 +262,10 @@ Respuesta:
 }
 ```
 ### Crear Artículo
-Método: POST
-Endpoint: article/create
-Descripción: Crea un nuevo artículo.
-Datos del cuerpo:
+1. Método: POST
+2. Endpoint: article/create
+3. Descripción: Crea un nuevo artículo.
+4. Datos del cuerpo:
 ```json
 {
   "name": "Cocina",
@@ -278,7 +278,7 @@ Datos del cuerpo:
   }
 }
 ```
-Respuesta:
+5. Respuesta:
 ```json
 {
     "date": "2024-06-18",
@@ -303,10 +303,10 @@ Respuesta:
 }
 ```
 ### Actualizar Artículo
-Método: PUT
-Endpoint: article/{id}
-Descripción: Actualiza un artículo existente.
-Datos del cuerpo:
+1. Método: PUT
+2. Endpoint: article/{id}
+3. Descripción: Actualiza un artículo existente.
+4. Datos del cuerpo:
 ```json
 {
   "name": "Sudadera",
@@ -321,7 +321,7 @@ Datos del cuerpo:
   }
 }
 ```
-Respuesta:
+5. Respuesta:
 ```json
 {
     "date": "2024-06-18",
@@ -346,10 +346,10 @@ Respuesta:
 }
 ```
 ### Eliminar Artículo
-Método: DELETE
-Endpoint: article/{id}
-Descripción: Elimina un artículo.
-Respuesta:
+1. Método: DELETE
+2. Endpoint: article/{id}
+3. Descripción: Elimina un artículo.
+4. Respuesta:
 ```json
 {
     "date": "2024-06-18",
