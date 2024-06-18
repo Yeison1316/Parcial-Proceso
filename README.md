@@ -87,7 +87,7 @@ Respuesta:
     "message": [
         "User register"
     ],
-    "statusCode": "INTERNAL_SERVER_ERROR",
+    "statusCode": "SUCESSFULL",
 }
 ```
 ##Inicio de Sesión
