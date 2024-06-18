@@ -11,7 +11,10 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
 - [Uso](#uso)
   - [Autenticación](#autenticación)
   - [Endpoints de Usuarios](#endpoints-de-usuarios)
-      - [Registrar usuarios](#registro-de-usuario)
+      - -[Registrar usuarios](#registro-de-usuario)
+      - -[acceso de usuarios](#inicio-de-sesion)
+      - -[crear usuarios](#crear-usuarios)
+      - - [crear usuarios](#crear-usuarios)
   - [Endpoints de Categorías](#endpoints-de-categorías)
   - [Endpoints de Artículos](#endpoints-de-artículos)
 
