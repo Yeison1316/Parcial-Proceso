@@ -57,10 +57,10 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 
 ### Authorization: Bearer <token>
 ### Registro de Usuario
-Método: POST
-Endpoint: auth/register
-##Descripción: Registra un nuevo usuario.
-Datos del cuerpo:
+1. Método: POST
+2. Endpoint: auth/register
+3. Descripción: Registra un nuevo usuario.
+4. Datos del cuerpo:
 ```json
 {
   "fullName": "Yeison Mestra",
@@ -72,7 +72,7 @@ Datos del cuerpo:
   "role": "ADMIN"
 }
 ```
-Respuesta:
+5. Respuesta:
 ```json
 {
     "date": "2024-06-18",
