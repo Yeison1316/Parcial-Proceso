@@ -10,16 +10,26 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
 - [Configuración](#configuración)
 - [Uso](#uso)
   - [Autenticación](#autenticación)
-  - [Endpoints de Usuarios](#endpoints-de-usuarios)
       - [Registrar usuarios](#registro-de-usuario)
       - [Acceso de usuarios](#inicio-de-sesión)
+  - [Endpoints de Usuarios](#endpoints-de-usuarios)
       - [Crear usuarios](#crear-usuarios)
       - [obtener usuarios](#obtener-usuarios)
       - [obtener un usuario](#obtener-un-usuario)
       - [Actualizar un usuario](#actualizar-un-usuario)
       - [Eliminar un usuario](#eliminar-un-usuario)
   - [Endpoints de Categorías](#endpoints-de-categorías)
+      - [Crear categorías](#crear-categoría)
+      - [obtener categorías](#obtener-categorías)
+      - [obtener una categoría](#obtener-una-categoría)
+      - [Actualizar una categoría](#actualizar-una-categoría)
+      - [Eliminar un categoría](#eliminar-una-categoría)
   - [Endpoints de Artículos](#endpoints-de-artículos)
+      - [Crear artículos](#crear-artículos)
+      - [obtener artículos](#obtener-artículos)
+      - [obtener un artículo](#obtener-un-artículo)
+      - [Actualizar un artículo](#actualizar-un-artículo)
+      - [Eliminar un artículo](#eliminar-un-artículo)
 
 ## Instalación
 
@@ -102,6 +112,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 ```
+### Endpoints de Usuarios
 ### Crear Usuarios
 1. Método: POST
 2. Endpoint: user/create
@@ -357,7 +368,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Actualizar Categoría
+### Actualizar una Categoría
 1. Método: PUT
 2. Endpoint: category/{id}
 3. Descripción: Actualiza una categoría existente.
@@ -383,7 +394,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Eliminar Categoría
+### Eliminar una Categoría
 1. Método: DELETE
 2. Endpoint: /api/categories/{id}
 3. Descripción: Elimina una categoría.
@@ -468,7 +479,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Crear Artículo
+### Crear Artículos
 1. Método: POST
 2. Endpoint: article/create
 3. Descripción: Crea un nuevo artículo.
@@ -509,7 +520,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Actualizar Artículo
+### Actualizar un Artículo
 1. Método: PUT
 2. Endpoint: article/{id}
 3. Descripción: Actualiza un artículo existente.
@@ -552,7 +563,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
-### Eliminar Artículo
+### Eliminar un Artículo
 1. Método: DELETE
 2. Endpoint: article/{id}
 3. Descripción: Elimina un artículo.
