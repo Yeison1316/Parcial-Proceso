@@ -50,8 +50,8 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
 
 La API utiliza autenticación basada en tokens JWT. Para acceder a la mayoría de los endpoints, es necesario incluir un token de autorización en el encabezado de la solicitud.
 
-- **Registro de usuario**: `/api/register`
-- **Inicio de sesión**: `/api/login`
+- **Registro de usuario**: `auth/register`
+- **Inicio de sesión**: `auth/login`
 
 El token recibido tras el inicio de sesión debe incluirse en el encabezado de las solicitudes como:
 
