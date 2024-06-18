@@ -13,8 +13,6 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
   - [Endpoints de Usuarios](#endpoints-de-usuarios)
   - [Endpoints de Categorías](#endpoints-de-categorías)
   - [Endpoints de Artículos](#endpoints-de-artículos)
-- [Ejemplos de Solicitudes](#ejemplos-de-solicitudes)
-- [Licencia](#licencia)
 
 ## Instalación
 
