@@ -280,7 +280,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
         }
     ]
 }
-   ```
+```
 ##### Eliminar un usuario
 1. Método: DELETE
 2. Endpoint: user/id
