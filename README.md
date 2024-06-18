@@ -51,7 +51,7 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
 2. Crea la base de datos en tu administrador de base de datos de tu preferencia:
 
 3. Inicia el servicio
-
+   Configurar la variable global en postman http://localhost:8081/
 ## Uso
 
 ### Autenticación
@@ -63,139 +63,211 @@ La API utiliza autenticación basada en tokens JWT. Para acceder a la mayoría d
 
 El token recibido tras el inicio de sesión debe incluirse en el encabezado de las solicitudes como:
 
-```http
-Authorization: Bearer <token>
-Registro de Usuario
+### Authorization: Bearer <token>
+## Registro de Usuario
 Método: POST
-Endpoint: /api/register
-Descripción: Registra un nuevo usuario.
+Endpoint: auth/register
+##Descripción: Registra un nuevo usuario.
 Datos del cuerpo:
-json
-´´´
+´´´json
 {
-"username": "usuario",
-"email": "email@example.com",
-"password": "contraseña"
+  "fullName": "Yeison Mestra",
+  "birthDay": "1990-01-01",
+  "document": "12345678",
+  "phoneNumber": "1234567890",
+  "email": "yeison@example.com",
+  "password": "pas123",
+  "role": "ADMIN"
 }
 ´´´
 Respuesta:
-json
-Copiar código
+´´´json
 {
-"id": 1,
-"username": "usuario",
-"email": "email@example.com",
-"created_at": "2023-06-18T12:00:00Z"
+    "date": "2024-06-18",
+    "message": [
+        "User register"
+    ],
+    "statusCode": "INTERNAL_SERVER_ERROR",
 }
-Inicio de Sesión
+´´´
+##Inicio de Sesión
 Método: POST
-Endpoint: /api/login
+Endpoint: auth/login
 Descripción: Autentica un usuario y devuelve un token JWT.
 Datos del cuerpo:
-json
-Copiar código
+´´´json
 {
 "email": "email@example.com",
 "password": "contraseña"
 }
+´´´
 Respuesta:
-json
-Copiar código
+´´´json
 {
 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
-Endpoints de Categorías
-Obtener Categorías
+´´´
+### Endpoints de Categorías
+## Obtener Categorías
 Método: GET
-Endpoint: /api/categories
+Endpoint: category/all
 Descripción: Devuelve una lista de todas las categorías.
 Respuesta:
-json
-Copiar código
-[
+´´´json
 {
-"id": 1,
-"name": "Electrónica",
-"description": "Dispositivos electrónicos y accesorios."
-},
-{
-"id": 2,
-"name": "Ropa",
-"description": "Prendas de vestir para todas las edades."
+    "date": "2024-06-18",
+    "message": [
+        "Successful category query"
+    ],
+    "statusCode": "200",
+    "category": [
+        {
+            "id": 1,
+            "nameCategory": "Zapatos"
+        },
+        {
+            "id": 2,
+            "nameCategory": "Ropa"
+        }
+    ]
 }
-]
-Crear Categoría
+´´´
+##Crear Categoría
 Método: POST
-Endpoint: /api/categories
+Endpoint: category/create
 Descripción: Crea una nueva categoría.
 Datos del cuerpo:
 json
-Copiar código
 {
-"name": "nombre_categoria",
-"description": "descripción de la categoría"
+  "nameCategory": "nombre_categoria"
 }
 Respuesta:
-json
-Copiar código
+´´´json
 {
-"id": 3,
-"name": "nombre_categoria",
-"description": "descripción de la categoría"
+    "date": "2024-06-18",
+    "message": [
+        "Category create!"
+    ],
+    "statusCode": "200",
+    "category": [
+        {
+            "id": 3,
+            "nameCategory": "Buzos"
+        }
+    ]
 }
-Actualizar Categoría
+´´´
+##Actualizar Categoría
 Método: PUT
-Endpoint: /api/categories/{id}
+Endpoint: category/{id}
 Descripción: Actualiza una categoría existente.
 Datos del cuerpo:
-json
-Copiar código
+´´´json
 {
-"name": "nuevo_nombre",
-"description": "nueva_descripción"
+"nameCategory": "nuevo_nombre",
 }
+´´´
 Respuesta:
-json
-Copiar código
+´´´json
 {
-"id": 3,
-"name": "nuevo_nombre",
-"description": "nueva_descripción"
+    "date": "2024-06-18",
+    "message": [
+        "Update Caegory!"
+    ],
+    "statusCode": "200",
+    "category": [
+        {
+            "id": 3,
+            "nameCategory": "Camisas"
+        }
+    ]
 }
+´´´
 Eliminar Categoría
 Método: DELETE
 Endpoint: /api/categories/{id}
 Descripción: Elimina una categoría.
 Respuesta:
-json
-Copiar código
+´´´json
 {
-"message": "Categoría eliminada exitosamente."
+    "date": "2024-06-18",
+    "message": [
+        "Category successful removal"
+    ],
+    "statusCode": "200",
+    "category": [
+        {
+            "id": 3,
+            "nameCategory": "Camisas"
+        }
+    ]
 }
-Endpoints de Artículos
+´´´
+### Endpoints de Artículos
 Obtener Artículos
 Método: GET
-Endpoint: /api/articles
+Endpoint: article/all
 Descripción: Devuelve una lista de todos los artículos.
 Respuesta:
-json
-Copiar código
-[
+´´´json
 {
-"id": 1,
-"title": "Laptop",
-"description": "Laptop de alta gama.",
-"price": 999.99,
-"category_id": 1
-},
-{
-"id": 2,
-"title": "Camisa",
-"description": "Camisa de algodón.",
-"price": 19.99,
-"category_id": 2
+    "date": "2024-06-18",
+    "message": [
+        "Successful article query"
+    ],
+    "statusCode": "200",
+    "article": [
+        {
+            "id": 2,
+            "name": "Zapato",
+            "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+            "stock": 50,
+            "price": "39.99",
+            "dateOfAdmission": "2024-04-08",
+            "category": {
+                "id": 1,
+                "nameCategory": "Zapatos"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Tacon",
+            "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+            "stock": 50,
+            "price": "39.99",
+            "dateOfAdmission": "2024-04-08",
+            "category": {
+                "id": 1,
+                "nameCategory": "Zapatos"
+            }
+        },
+        {
+            "id": 4,
+            "name": "carro",
+            "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+            "stock": 50,
+            "price": "39.99",
+            "dateOfAdmission": "2024-04-08",
+            "category": {
+                "id": 1,
+                "nameCategory": "Zapatos"
+            }
+        },
+        {
+            "id": 5,
+            "name": "Buzote",
+            "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+            "stock": 50,
+            "price": "39.99",
+            "dateOfAdmission": "2024-04-08",
+            "category": {
+                "id": 1,
+                "nameCategory": "Zapatos"
+            }
+        }
+    ]
 }
-]
+´´´
 Crear Artículo
 Método: POST
 Endpoint: /api/articles
