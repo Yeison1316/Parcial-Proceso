@@ -247,7 +247,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
   "email": "example@example.com",
   "password": "1234",
   "role": "ADMIN"
-}
+  }
 ```
 5. Respuestas
    ```json
@@ -277,9 +277,9 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
                 }
             ],
             "accountNonLocked": true
-        }
-    ]
-}
+          }
+      ]
+    }
 ```
 ##### Eliminar un usuario
 1. Método: DELETE
