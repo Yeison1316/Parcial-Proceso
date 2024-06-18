@@ -123,9 +123,31 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 {
     "date": "2024-06-18",
     "message": [
-        "User register"
+        "User create!"
     ],
-    "statusCode": "SUCESSFULL",
+    "statusCode": "201",
+    "user": [
+        {
+            "id": 7,
+            "fullName": "Carlos Mestra",
+            "birthDay": "1990-01-01T00:00:00.000+00:00",
+            "document": "1234418855",
+            "phoneNumber": "1234567890",
+            "email": "carlos@example.com",
+            "password": "1234",
+            "role": "ADMIN",
+            "enabled": true,
+            "accountNonExpired": true,
+            "credentialsNonExpired": true,
+            "username": "carlos@example.com",
+            "authorities": [
+                {
+                    "authority": "ADMIN"
+                }
+            ],
+            "accountNonLocked": true
+        }
+    ]
 }
 ```
 ### Obtener usuarios
