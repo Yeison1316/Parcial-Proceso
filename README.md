@@ -167,7 +167,7 @@ Datos del cuerpo:
 {
 "nameCategory": "nuevo_nombre",
 }
-´´´
+```
 Respuesta:
 ```json
 {
@@ -274,16 +274,11 @@ Método: POST
 Endpoint: /api/articles
 Descripción: Crea un nuevo artículo.
 Datos del cuerpo:
-json
-Copiar código
-{
-"title": "nombre_artículo",
-"description": "descripción del artículo",
-"price": 29.99,
-"category_id": 1
-}
+```json
+
+```
 Respuesta:
-json
+```json
 Copiar código
 {
 "id": 3,
@@ -292,22 +287,22 @@ Copiar código
 "price": 29.99,
 "category_id": 1
 }
+```
 Actualizar Artículo
 Método: PUT
 Endpoint: /api/articles/{id}
 Descripción: Actualiza un artículo existente.
 Datos del cuerpo:
-json
-Copiar código
+```json
 {
 "title": "nuevo_nombre",
 "description": "nueva_descripción",
 "price": 39.99,
 "category_id": 2
 }
+```
 Respuesta:
-json
-Copiar código
+```json
 {
 "id": 3,
 "title": "nuevo_nombre",
@@ -315,53 +310,15 @@ Copiar código
 "price": 39.99,
 "category_id": 2
 }
+```
 Eliminar Artículo
 Método: DELETE
 Endpoint: /api/articles/{id}
 Descripción: Elimina un artículo.
 Respuesta:
-json
-Copiar código
+```json
 {
 "message": "Artículo eliminado exitosamente."
 }
-Ejemplos de Solicitudes
-Crear Usuario
-http
-Copiar código
-POST /api/register
-Content-Type: application/json
+```
 
-{
-"username": "usuario",
-"email": "usuario@example.com",
-"password": "contraseña"
-}
-Iniciar Sesión
-http
-Copiar código
-POST /api/login
-Content-Type: application/json
-
-{
-"email": "usuario@example.com",
-"password": "contraseña"
-}
-Obtener Categorías
-http
-Copiar código
-GET /api/categories
-Authorization: Bearer <token>
-Crear Artículo
-http
-Copiar código
-POST /api/articles
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-"title": "Nuevo Artículo",
-"description": "Descripción del artículo",
-"price": 19.99,
-"category_id": 1
-}
