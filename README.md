@@ -263,7 +263,7 @@ Respuesta:
 ```
 ### Crear Artículo
 Método: POST
-Endpoint: /api/articles
+Endpoint: article/create
 Descripción: Crea un nuevo artículo.
 Datos del cuerpo:
 ```json
@@ -304,7 +304,7 @@ Respuesta:
 ```
 ### Actualizar Artículo
 Método: PUT
-Endpoint: /api/articles/{id}
+Endpoint: article/{id}
 Descripción: Actualiza un artículo existente.
 Datos del cuerpo:
 ```json
@@ -347,7 +347,7 @@ Respuesta:
 ```
 ### Eliminar Artículo
 Método: DELETE
-Endpoint: /api/articles/{id}
+Endpoint: article/{id}
 Descripción: Elimina un artículo.
 Respuesta:
 ```json
