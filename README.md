@@ -33,36 +33,24 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
 3. Instala las dependencias:
 
     ```bash
-    npm install
-    # o
-    pip install -r requirements.txt
-    ```
+    Instalar la extension o plugin de lombok
 
 ## Configuración
 
-1. Crea un archivo `.env` en la raíz del proyecto y configura las variables de entorno necesarias:
+1. En el archivo `.properties` en la raíz del proyecto, configura las variables de entorno necesarias:
 
-    ```env
-    DATABASE_URL=postgres://usuario:contraseña@localhost:5432/tienda
-    SECRET_KEY=tu_secreto
-    JWT_EXPIRATION=3600
+    ```properties
+    server.port = 8081
+    spring.datasource.url=jdbc:mysql://localhost:3306/nombreBasededatos
+    spring.datasource.password=*****
+    spring.datasource.username=root
+    spring.jpa.show-sql=true
+    spring.jpa.hibernate.ddl-auto=update
     ```
 
-2. Ejecuta las migraciones de la base de datos:
+2. Crea la base de datos en tu administrador de base de datos de tu preferencia:
 
-    ```bash
-    npm run migrate
-    # o
-    python manage.py migrate
-    ```
-
-3. Inicia el servidor:
-
-    ```bash
-    npm start
-    # o
-    python manage.py runserver
-    ```
+3. Inicia el servicio
 
 ## Uso
 
@@ -77,3 +65,230 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 
 ```http
 Authorization: Bearer <token>
+Registro de Usuario
+Método: POST
+Endpoint: /api/register
+Descripción: Registra un nuevo usuario.
+Datos del cuerpo:
+json
+´´´
+{
+"username": "usuario",
+"email": "email@example.com",
+"password": "contraseña"
+}
+´´´
+Respuesta:
+json
+Copiar código
+{
+"id": 1,
+"username": "usuario",
+"email": "email@example.com",
+"created_at": "2023-06-18T12:00:00Z"
+}
+Inicio de Sesión
+Método: POST
+Endpoint: /api/login
+Descripción: Autentica un usuario y devuelve un token JWT.
+Datos del cuerpo:
+json
+Copiar código
+{
+"email": "email@example.com",
+"password": "contraseña"
+}
+Respuesta:
+json
+Copiar código
+{
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+Endpoints de Categorías
+Obtener Categorías
+Método: GET
+Endpoint: /api/categories
+Descripción: Devuelve una lista de todas las categorías.
+Respuesta:
+json
+Copiar código
+[
+{
+"id": 1,
+"name": "Electrónica",
+"description": "Dispositivos electrónicos y accesorios."
+},
+{
+"id": 2,
+"name": "Ropa",
+"description": "Prendas de vestir para todas las edades."
+}
+]
+Crear Categoría
+Método: POST
+Endpoint: /api/categories
+Descripción: Crea una nueva categoría.
+Datos del cuerpo:
+json
+Copiar código
+{
+"name": "nombre_categoria",
+"description": "descripción de la categoría"
+}
+Respuesta:
+json
+Copiar código
+{
+"id": 3,
+"name": "nombre_categoria",
+"description": "descripción de la categoría"
+}
+Actualizar Categoría
+Método: PUT
+Endpoint: /api/categories/{id}
+Descripción: Actualiza una categoría existente.
+Datos del cuerpo:
+json
+Copiar código
+{
+"name": "nuevo_nombre",
+"description": "nueva_descripción"
+}
+Respuesta:
+json
+Copiar código
+{
+"id": 3,
+"name": "nuevo_nombre",
+"description": "nueva_descripción"
+}
+Eliminar Categoría
+Método: DELETE
+Endpoint: /api/categories/{id}
+Descripción: Elimina una categoría.
+Respuesta:
+json
+Copiar código
+{
+"message": "Categoría eliminada exitosamente."
+}
+Endpoints de Artículos
+Obtener Artículos
+Método: GET
+Endpoint: /api/articles
+Descripción: Devuelve una lista de todos los artículos.
+Respuesta:
+json
+Copiar código
+[
+{
+"id": 1,
+"title": "Laptop",
+"description": "Laptop de alta gama.",
+"price": 999.99,
+"category_id": 1
+},
+{
+"id": 2,
+"title": "Camisa",
+"description": "Camisa de algodón.",
+"price": 19.99,
+"category_id": 2
+}
+]
+Crear Artículo
+Método: POST
+Endpoint: /api/articles
+Descripción: Crea un nuevo artículo.
+Datos del cuerpo:
+json
+Copiar código
+{
+"title": "nombre_artículo",
+"description": "descripción del artículo",
+"price": 29.99,
+"category_id": 1
+}
+Respuesta:
+json
+Copiar código
+{
+"id": 3,
+"title": "nombre_artículo",
+"description": "descripción del artículo",
+"price": 29.99,
+"category_id": 1
+}
+Actualizar Artículo
+Método: PUT
+Endpoint: /api/articles/{id}
+Descripción: Actualiza un artículo existente.
+Datos del cuerpo:
+json
+Copiar código
+{
+"title": "nuevo_nombre",
+"description": "nueva_descripción",
+"price": 39.99,
+"category_id": 2
+}
+Respuesta:
+json
+Copiar código
+{
+"id": 3,
+"title": "nuevo_nombre",
+"description": "nueva_descripción",
+"price": 39.99,
+"category_id": 2
+}
+Eliminar Artículo
+Método: DELETE
+Endpoint: /api/articles/{id}
+Descripción: Elimina un artículo.
+Respuesta:
+json
+Copiar código
+{
+"message": "Artículo eliminado exitosamente."
+}
+Ejemplos de Solicitudes
+Crear Usuario
+http
+Copiar código
+POST /api/register
+Content-Type: application/json
+
+{
+"username": "usuario",
+"email": "usuario@example.com",
+"password": "contraseña"
+}
+Iniciar Sesión
+http
+Copiar código
+POST /api/login
+Content-Type: application/json
+
+{
+"email": "usuario@example.com",
+"password": "contraseña"
+}
+Obtener Categorías
+http
+Copiar código
+GET /api/categories
+Authorization: Bearer <token>
+Crear Artículo
+http
+Copiar código
+POST /api/articles
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+"title": "Nuevo Artículo",
+"description": "Descripción del artículo",
+"price": 19.99,
+"category_id": 1
+}
