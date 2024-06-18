@@ -342,6 +342,26 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
     ]
 }
 ```
+##### Obtener una Categoría
+1. Método: GET
+2. Endpoint: category/id
+3. Descripción: Devuelve una categoria por su id.
+4. Respuesta:
+```json
+{
+    "date": "2024-06-18",
+    "message": [
+        "Successful category query"
+    ],
+    "statusCode": "200",
+    "category": [
+        {
+            "id": 1,
+            "nameCategory": "Zapatos"
+        }
+    ]
+}
+```
 ##### Crear Categoría
 1. Método: POST
 2. Endpoint: category/create
@@ -467,6 +487,34 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
         {
             "id": 5,
             "name": "Buzote",
+            "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+            "stock": 50,
+            "price": "39.99",
+            "dateOfAdmission": "2024-04-08",
+            "category": {
+                "id": 1,
+                "nameCategory": "Zapatos"
+            }
+        }
+    ]
+}
+```
+##### Obtener un artículo
+1. Método: GET
+2. Endpoint: article/all
+3. Descripción: Devuelve un artículo por su id.
+4. Respuesta:
+```json
+{
+    "date": "2024-06-18",
+    "message": [
+        "Successful article query"
+    ],
+    "statusCode": "200",
+    "article": [
+        {
+            "id": 2,
+            "name": "Zapato",
             "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
             "stock": 50,
             "price": "39.99",
