@@ -56,7 +56,7 @@ La API utiliza autenticación basada en tokens JWT. Para acceder a la mayoría d
 El token recibido tras el inicio de sesión debe incluirse en el encabezado de las solicitudes como:
 
 ### Authorization: Bearer <token>
-## Registro de Usuario
+### Registro de Usuario
 Método: POST
 Endpoint: auth/register
 ##Descripción: Registra un nuevo usuario.
@@ -82,7 +82,7 @@ Respuesta:
     "statusCode": "SUCESSFULL",
 }
 ```
-##Inicio de Sesión
+### Inicio de Sesión
 Método: POST
 Endpoint: auth/login
 Descripción: Autentica un usuario y devuelve un token JWT.
@@ -100,7 +100,7 @@ Respuesta:
 }
 ```
 ### Endpoints de Categorías
-## Obtener Categorías
+### Obtener Categorías
 Método: GET
 Endpoint: category/all
 Descripción: Devuelve una lista de todas las categorías.
@@ -124,7 +124,7 @@ Respuesta:
     ]
 }
 ```
-##Crear Categoría
+### Crear Categoría
 Método: POST
 Endpoint: category/create
 Descripción: Crea una nueva categoría.
@@ -150,7 +150,7 @@ Respuesta:
     ]
 }
 ```
-##Actualizar Categoría
+### Actualizar Categoría
 Método: PUT
 Endpoint: category/{id}
 Descripción: Actualiza una categoría existente.
@@ -176,7 +176,7 @@ Respuesta:
     ]
 }
 ```
-Eliminar Categoría
+### Eliminar Categoría
 Método: DELETE
 Endpoint: /api/categories/{id}
 Descripción: Elimina una categoría.
@@ -197,7 +197,7 @@ Respuesta:
 }
 ```
 ### Endpoints de Artículos
-Obtener Artículos
+### Obtener Artículos
 Método: GET
 Endpoint: article/all
 Descripción: Devuelve una lista de todos los artículos.
@@ -261,7 +261,7 @@ Respuesta:
     ]
 }
 ```
-Crear Artículo
+### Crear Artículo
 Método: POST
 Endpoint: /api/articles
 Descripción: Crea un nuevo artículo.
@@ -302,7 +302,7 @@ Respuesta:
     ]
 }
 ```
-Actualizar Artículo
+### Actualizar Artículo
 Método: PUT
 Endpoint: /api/articles/{id}
 Descripción: Actualiza un artículo existente.
@@ -345,7 +345,7 @@ Respuesta:
     ]
 }
 ```
-Eliminar Artículo
+### Eliminar Artículo
 Método: DELETE
 Endpoint: /api/articles/{id}
 Descripción: Elimina un artículo.
