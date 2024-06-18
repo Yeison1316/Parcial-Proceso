@@ -275,17 +275,39 @@ Endpoint: /api/articles
 Descripción: Crea un nuevo artículo.
 Datos del cuerpo:
 ```json
-
+{
+  "name": "Cocina",
+  "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+  "stock": 50,
+  "price": "39.99",
+  "dateOfAdmission": "2024-04-09",
+  "category": {
+    "id": 1
+  }
+}
 ```
 Respuesta:
 ```json
-Copiar código
 {
-"id": 3,
-"title": "nombre_artículo",
-"description": "descripción del artículo",
-"price": 29.99,
-"category_id": 1
+    "date": "2024-06-18",
+    "message": [
+        "Article create!"
+    ],
+    "statusCode": "201",
+    "article": [
+        {
+            "id": 7,
+            "name": "Cocina",
+            "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+            "stock": 50,
+            "price": "39.99",
+            "dateOfAdmission": "2024-04-08",
+            "category": {
+                "id": 1,
+                "nameCategory": null
+            }
+        }
+    ]
 }
 ```
 Actualizar Artículo
@@ -295,20 +317,40 @@ Descripción: Actualiza un artículo existente.
 Datos del cuerpo:
 ```json
 {
-"title": "nuevo_nombre",
-"description": "nueva_descripción",
-"price": 39.99,
-"category_id": 2
+  "name": "Sudadera",
+  "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+  "stock": 30,
+  "price": "39.99",
+  "dateOfAdmission": "2024-04-09",
+  "category": {
+    "id": 2,
+    "name": "Ropa",
+    "description": "Artículos de vestir"
+  }
 }
 ```
 Respuesta:
 ```json
 {
-"id": 3,
-"title": "nuevo_nombre",
-"description": "nueva_descripción",
-"price": 39.99,
-"category_id": 2
+    "date": "2024-06-18",
+    "message": [
+        "Update Aricle OK!"
+    ],
+    "statusCode": "200",
+    "article": [
+        {
+            "id": 2,
+            "name": "Sudadera",
+            "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+            "stock": 30,
+            "price": "39.99",
+            "dateOfAdmission": "2024-04-08",
+            "category": {
+                "id": 2,
+                "nameCategory": null
+            }
+        }
+    ]
 }
 ```
 Eliminar Artículo
@@ -318,7 +360,25 @@ Descripción: Elimina un artículo.
 Respuesta:
 ```json
 {
-"message": "Artículo eliminado exitosamente."
+    "date": "2024-06-18",
+    "message": [
+        "Article successful removal"
+    ],
+    "statusCode": "200",
+    "article": [
+        {
+            "id": 5,
+            "name": "Buzote",
+            "description": "Sudadera cómoda y abrigada con capucha y bolsillo canguro",
+            "stock": 50,
+            "price": "39.99",
+            "dateOfAdmission": "2024-04-08",
+            "category": {
+                "id": 1,
+                "nameCategory": "Zapatos"
+            }
+        }
+    ]
 }
 ```
 
