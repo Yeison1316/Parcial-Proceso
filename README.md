@@ -42,11 +42,11 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
 2. Instala las dependencias:
 
     ```bash
-    Instalar la extension o plugin de lombok
+    Instalar la extension o plugin de Lombok
 
 ## Configuración
 
-1. En el archivo `.properties` en la raíz del proyecto, configura las variables de entorno necesarias:
+1. En el archivo `.properties` configura las variables de entorno necesarias:
 
     ```properties
     server.port = 8081
@@ -57,10 +57,10 @@ Esta API permite gestionar una tienda en línea con funcionalidades para manejar
     spring.jpa.hibernate.ddl-auto=update
     ```
 
-2. Crea la base de datos en tu administrador de base de datos de tu preferencia:
-
-3. Inicia el servicio
-   Configurar la variable global en postman http://localhost:8081/
+2. Crea la base de datos en tu administrador de base de datos de tu preferencia
+  
+4. Inicia el servicio
+   Ve al archivo principal del proyecto y ejecuta el servicio
 ## Uso
 
 ### Autenticación
