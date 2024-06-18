@@ -62,9 +62,9 @@ public class AuthService {
         User newUser = new User();
         newUser.setFullName(user.getUsername());
         newUser.setEmail(user.getEmail());
-        newUser.setPassword(passwordEncoder.encode(user.getPassword()));
+        newUser.setPassword(user.getPassword());
 
-        User savedUser = userRepository.save(newUser);
+        User savedUser = userRepository.save(user);
         UserDetails userDetails = new org.springframework.security.core.userdetails.User(
                 savedUser.getEmail(),
                 savedUser.getPassword(),
