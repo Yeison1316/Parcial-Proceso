@@ -82,11 +82,7 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 5. Respuesta:
 ```json
 {
-    "date": "2024-06-18",
-    "message": [
-        "User register"
-    ],
-    "statusCode": "SUCESSFULL",
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjYXJsb3NAZXhhbXBsZS5jb20iLCJpYXQiOjE3MTg3Mjg2MjAsImV4cCI6MTcxODcyODk4MH0._4lKmwyDgQgjrhlvHX9KMr2kvtgqH1_MjmdZmOxmNnGBFM_psXYapfahPk6cubS1FyVsobtvW4PuW8K6hrpNXQ"
 }
 ```
 ### Inicio de Sesión
@@ -104,6 +100,188 @@ El token recibido tras el inicio de sesión debe incluirse en el encabezado de l
 ```json
 {
 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+### Crear Usuarios
+1. Método: POST
+2. Endpoint: user/create
+3. Descripción: Crear un nuevo usuario.
+4. Datos del cuerpo:
+```json
+{
+  "fullName": "full name",
+  "birthDay": "1990-01-01",
+  "document": "12345678",
+  "phoneNumber": "1234567890",
+  "email": "example@example.com",
+  "password": "1234",
+  "role": "ADMIN"
+}
+```
+5. Respuesta:
+```json
+{
+    "date": "2024-06-18",
+    "message": [
+        "User register"
+    ],
+    "statusCode": "SUCESSFULL",
+}
+```
+### Obtener usuarios
+1. Método: GET
+2. Endpoint: user/all
+3. Descripción: Devuelve una lista de todos los usuarios.
+4. Respuesta:
+```json
+{
+    "date": "2024-06-18",
+    "message": [
+        "Successful user query"
+    ],
+    "statusCode": "200",
+    "user": [
+        {
+            "id": 6,
+            "fullName": "user_name",
+            "birthDay": "1990-01-01T00:00:00.000+00:00",
+            "document": "1234418855",
+            "phoneNumber": "1234567890",
+            "email": "example@example.com",
+            "password": "1234",
+            "role": "ADMIN",
+            "enabled": true,
+            "accountNonExpired": true,
+            "credentialsNonExpired": true,
+            "username": "user@example.com",
+            "authorities": [
+                {
+                    "authority": "ADMIN"
+                }
+            ],
+            "accountNonLocked": true
+        }
+    ]
+}
+```
+### Obtener un usuario
+1. Método: GET
+2. Endpoint: user/id
+3. Descripción: Devuelve el usuario por su id.
+4. Respuesta:
+```json
+{
+    "date": "2024-06-18",
+    "message": [
+        "Successful user query"
+    ],
+    "statusCode": "200",
+    "user": [
+        {
+            "id": 6,
+            "fullName": "user_name",
+            "birthDay": "1990-01-01T00:00:00.000+00:00",
+            "document": "1234418855",
+            "phoneNumber": "1234567890",
+            "email": "example@example.com",
+            "password": "1234",
+            "role": "ADMIN",
+            "enabled": true,
+            "accountNonExpired": true,
+            "credentialsNonExpired": true,
+            "username": "user@example.com",
+            "authorities": [
+                {
+                    "authority": "ADMIN"
+                }
+            ],
+            "accountNonLocked": true
+        }
+    ]
+}
+```
+### Actualizar un usuario
+1. Método: PUT
+2. Endpoint: user/id
+3. Descripción: Actualiza un usuario existente.
+4. Datos del cuerpo:
+```json
+  {
+  "fullName": "full name",
+  "birthDay": "1990-01-01",
+  "document": "12345678",
+  "phoneNumber": "1234567890",
+  "email": "example@example.com",
+  "password": "1234",
+  "role": "ADMIN"
+}
+```
+5. Respuestas
+   ```json
+   {
+    "date": "2024-06-18",
+    "message": [
+        "Update user OK!"
+    ],
+    "statusCode": "200",
+    "user": [
+        {
+            "id": 5,
+            "fullName": "full name",
+            "birthDay": "1990-01-01T00:00:00.000+00:00",
+            "document": "12345678",
+            "phoneNumber": "1234567890",
+            "email": "example@example.com",
+            "password": "pas123",
+            "role": "ADMIN",
+            "enabled": true,
+            "accountNonExpired": true,
+            "credentialsNonExpired": true,
+            "username": "user@example.com",
+            "authorities": [
+                {
+                    "authority": "ADMIN"
+                }
+            ],
+            "accountNonLocked": true
+        }
+    ]
+}
+   ```
+### Eliminar un usuario
+1. Método: DELETE
+2. Endpoint: user/id
+3. Descripción: Elimina un usuario existente.
+4. Respuesta:
+```json
+{
+    "date": "2024-06-18",
+    "message": [
+        "User successful removal"
+    ],
+    "statusCode": "200",
+    "user": [
+        {
+            "id": 6,
+            "fullName": "Carlos Mestra",
+            "birthDay": "1990-01-01T00:00:00.000+00:00",
+            "document": "1234418855",
+            "phoneNumber": "1234567890",
+            "email": "carlos@example.com",
+            "password": "1234",
+            "role": "ADMIN",
+            "enabled": true,
+            "accountNonExpired": true,
+            "credentialsNonExpired": true,
+            "username": "carlos@example.com",
+            "authorities": [
+                {
+                    "authority": "ADMIN"
+                }
+            ],
+            "accountNonLocked": true
+        }
+    ]
 }
 ```
 ### Endpoints de Categorías
