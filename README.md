@@ -69,7 +69,7 @@ Método: POST
 Endpoint: auth/register
 ##Descripción: Registra un nuevo usuario.
 Datos del cuerpo:
-´´´json
+```json
 {
   "fullName": "Yeison Mestra",
   "birthDay": "1990-01-01",
@@ -79,9 +79,9 @@ Datos del cuerpo:
   "password": "pas123",
   "role": "ADMIN"
 }
-´´´
+```
 Respuesta:
-´´´json
+```json
 {
     "date": "2024-06-18",
     "message": [
@@ -89,31 +89,31 @@ Respuesta:
     ],
     "statusCode": "INTERNAL_SERVER_ERROR",
 }
-´´´
+```
 ##Inicio de Sesión
 Método: POST
 Endpoint: auth/login
 Descripción: Autentica un usuario y devuelve un token JWT.
 Datos del cuerpo:
-´´´json
+```json
 {
 "email": "email@example.com",
 "password": "contraseña"
 }
-´´´
+```
 Respuesta:
-´´´json
+```json
 {
 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
-´´´
+```
 ### Endpoints de Categorías
 ## Obtener Categorías
 Método: GET
 Endpoint: category/all
 Descripción: Devuelve una lista de todas las categorías.
 Respuesta:
-´´´json
+```json
 {
     "date": "2024-06-18",
     "message": [
@@ -131,18 +131,19 @@ Respuesta:
         }
     ]
 }
-´´´
+```
 ##Crear Categoría
 Método: POST
 Endpoint: category/create
 Descripción: Crea una nueva categoría.
 Datos del cuerpo:
-json
+```json
 {
   "nameCategory": "nombre_categoria"
 }
+```
 Respuesta:
-´´´json
+```json
 {
     "date": "2024-06-18",
     "message": [
@@ -156,19 +157,19 @@ Respuesta:
         }
     ]
 }
-´´´
+```
 ##Actualizar Categoría
 Método: PUT
 Endpoint: category/{id}
 Descripción: Actualiza una categoría existente.
 Datos del cuerpo:
-´´´json
+```json
 {
 "nameCategory": "nuevo_nombre",
 }
 ´´´
 Respuesta:
-´´´json
+```json
 {
     "date": "2024-06-18",
     "message": [
@@ -182,13 +183,13 @@ Respuesta:
         }
     ]
 }
-´´´
+```
 Eliminar Categoría
 Método: DELETE
 Endpoint: /api/categories/{id}
 Descripción: Elimina una categoría.
 Respuesta:
-´´´json
+```json
 {
     "date": "2024-06-18",
     "message": [
@@ -202,14 +203,14 @@ Respuesta:
         }
     ]
 }
-´´´
+```
 ### Endpoints de Artículos
 Obtener Artículos
 Método: GET
 Endpoint: article/all
 Descripción: Devuelve una lista de todos los artículos.
 Respuesta:
-´´´json
+```json
 {
     "date": "2024-06-18",
     "message": [
@@ -267,7 +268,7 @@ Respuesta:
         }
     ]
 }
-´´´
+```
 Crear Artículo
 Método: POST
 Endpoint: /api/articles
